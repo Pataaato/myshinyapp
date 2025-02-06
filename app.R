@@ -3,9 +3,9 @@ library(styler)
 
 ui <- fluidPage(
   titlePanel("My First Shiny"),
-  h2("my app from scratch"),
   sidebarLayout(
     sidebarPanel(
+      h2("my app from scratch"),
       sliderInput(
         inputId = "newbins",
         label = "Number of bins:",
