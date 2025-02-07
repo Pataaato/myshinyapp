@@ -30,7 +30,11 @@ ui <- fluidPage(
         label = "Heads of characters:",
         min = 0,
         max = 250,
-        value = 30
+        value = 50
+      ),
+      actionButton(
+        inputId = "boutton", 
+        label = "Cliquez moi"
       )
     ),
     mainPanel(
@@ -69,6 +73,14 @@ server <- function(input, output) {
     starwars |>
       filter(height > input$taille) |>
       filter(gender %in% input$choix_genre)
+  })
+  observeEvent(input$boutton,{
+    message("Vous avez cliqué sur le bouton")
+  })
+  observeEvent(input$taille, { 
+               showNotification(
+                 glue("La valeur du slider a changé !  {input$taille} "), 
+                                type = "message") 
   })
 }
 
