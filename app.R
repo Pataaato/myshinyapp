@@ -9,7 +9,7 @@ ui <- fluidPage(
   h1("Star Wars Characters"),
   selectInput(
     inputId = "choix_genre",
-    choices = c("masculine", "feminine", NA),
+    choices = c("masculine", "feminine"),
     label = "Choose the good gender for the character",
     selected = NULL,
     multiple = FALSE,
